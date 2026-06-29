@@ -6,13 +6,13 @@
     <style>
       /*---CORES ROOT e GERAL CONFIG---*/
       :root {
-        --cor-background: #e7d2e2;
-        --cor-cabeçalho: #ddbfd6;
-        --sombra-cabeçalho: #cf90c0;
+        --cor-background: #d493ff;
+        --cor-cabeçalho: #f7a3f2;
+        --sombra-cabeçalho: #92708a;
         --fonte-geral: "Open Sans", sans-serif;
-        --cor-fonte: #000080de;
-        --fonte-sombra: #0000805e;
-        --lista-background-color: #faebd7;
+        --cor-fonte: #000075;
+        --fonte-sombra: #0000745e;
+        --lista-background-color: rgb(236, 184, 247);
         --itens-background-color: white;
         --cor-borda: var(--cor-fonte);
       }
@@ -73,6 +73,8 @@
         gap: 20px;
         margin: 25px;
         padding: 20px;
+        background-color: var(--lista-background-color);
+        border-radius: 20px;
       }
 
       #input-text {
@@ -93,14 +95,16 @@
         color: white;
         background-color: var(--cor-fonte);
       }
-      #botão-enviar { /* Efeitos do botão enviar */
+      #botão-enviar {
+        /* Efeitos do botão enviar */
         transition: 0.25s;
       }
 
-      #botão-enviar:hover { /* Efeitos do botão enviar */
+      #botão-enviar:hover {
+        /* Efeitos do botão enviar */
         transform: scale(1.08);
       }
-      
+
       #botão-enviar:hover {
         /* Estilos do botão de adicionar intem na lista */
         cursor: pointer;
@@ -158,6 +162,13 @@
         transition: 0.25s;
       }
 
+span{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+
       .item-lista span {
         /* Estilo o texto dos novos elemento <li> */
         font-size: 18px;
@@ -199,6 +210,26 @@
 
         background: #9b0000;
       }
+
+      @keyframes aparecer {
+        /*Animação completa de como os itens da lista sobem suavemente ao clicar em enviar CSS PURO     */
+
+        from {
+          opacity: 0;
+
+          transform: translateY(-15px);
+        }
+
+        to {
+          opacity: 1;
+
+          transform: translateY(0);
+        }
+      }
+
+      .item-lista {
+        animation: aparecer 0.25s ease;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -228,7 +259,7 @@
         </div>
       </section>
       <section class="lista">
-        <h2>LISTA PREVIEW</h2>
+        <h2>🛒Sua lista</h2>
         <div id="output-produtos">
           <ul id="molde-lista" style="text-decoration: none"></ul>
         </div>
