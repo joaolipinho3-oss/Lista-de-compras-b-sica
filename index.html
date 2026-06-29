@@ -65,7 +65,7 @@
         text-shadow: 2px 3px 5px var(--fonte-sombra);
         transition: 500ms;
       }
-      /*---MAIN CONGFIG---*/
+      /*---MAIN LISTAS CONGFIG---*/
       .lista {
         /* Define formatação das duas seções da página */
         display: flex;
@@ -93,7 +93,14 @@
         color: white;
         background-color: var(--cor-fonte);
       }
+      #botão-enviar { /* Efeitos do botão enviar */
+        transition: 0.25s;
+      }
 
+      #botão-enviar:hover { /* Efeitos do botão enviar */
+        transform: scale(1.08);
+      }
+      
       #botão-enviar:hover {
         /* Estilos do botão de adicionar intem na lista */
         cursor: pointer;
@@ -102,7 +109,8 @@
         transition: 500ms;
       }
 
-      #output-produtos { /* Plano de fundo e organização do preview! */
+      #output-produtos {
+        /* Plano de fundo e organização do preview! */
         display: flex;
         align-content: flex-start;
         align-items: center;
@@ -112,45 +120,84 @@
         min-width: 400px;
       }
 
-      .itens { /* Estilo dada novo elemento <li> */
+      .itens {
+        /* Estilo dada novo elemento <li> */
         color: black;
         font-size: 12px;
         background-color: whitesmoke;
       }
-      
+
+      #output-produtos {
+        border-radius: 20px;
+
+        padding: 20px;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
       .item-lista {
+        /* Estilo dada novo elemento <li> */
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        margin: 8px 0;
-        padding: 10px 15px;
+        width: 90%;
 
-        background-color: white;
-        border: 2px solid var(--cor-borda);
-        border-radius: 12px;
+        padding: 12px 16px;
+        margin: 10px auto;
 
         list-style: none;
+
+        background: white;
+
+        border: 2px solid var(--cor-borda);
+        border-radius: 14px;
+
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+
+        transition: 0.25s;
+      }
+
+      .item-lista span {
+        /* Estilo o texto dos novos elemento <li> */
+        font-size: 18px;
+        font-weight: 600;
       }
 
       .botao-excluir {
-        background-color: crimson;
-        color: white;
+        /* Estilo do botão excluir elemento */
+        width: 32px;
+        height: 32px;
 
         border: none;
-        border-radius: 8px;
+        border-radius: 50%;
 
-        width: 30px;
-        height: 30px;
+        background: #c62828;
+
+        color: white;
 
         cursor: pointer;
 
-        transition: 0.2s;
+        transition: 0.25s;
+      }
+
+      .item-lista:hover {
+        /* Efeitos de hover e sombra da lista */
+        transform: translateY(-2px);
+
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+      }
+
+      .botao-excluir:active {
+        /* Efeitos de hover e sombra da lista */
+        transform: scale(0.9);
       }
 
       .botao-excluir:hover {
-        transform: scale(1.1);
-        background-color: darkred;
+        /* Efeitos de hover e sombra da lista */
+        transform: scale(1.15);
+
+        background: #9b0000;
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
