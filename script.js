@@ -1,11 +1,34 @@
-const sendButton = document.getElementById("botão-enviar")
-const textInput = document.getElementById("input-text")
+const sendButton = document.getElementById("botão-enviar");
+const textInput = document.getElementById("input-text");
+const previewLista = document.getElementById("molde-lista");
+let itensArray = [];
 
-let preview = document.getElementById("output-produtos")
-
-let adicionarIten = () => {
-    textInput.values
-}
+if (sendButton && textInput && previewLista && itensArray != null) {
+console.log("As constantes funcionam adequadamente.")
+} else {
+    console.log("Reveja as constantes e revise o código.")
+};
 
 //Eventos de click
-addEventListener('click')
+
+
+sendButton.addEventListener('click', () => {
+    const item = document.createElement("li");
+    const deleteButton = document.createElement("button");
+
+    item.classList.add("item-lista");
+    deleteButton.classList.add("botao-excluir");
+
+    deleteButton.textContent = "X"
+
+    item.textContent = textInput.value
+    previewLista.appendChild(item)
+    item.appendChild(deleteButton)
+    itensArray.push(previewLista.value);
+    console.log(item);
+
+    deleteButton.addEventListener('click', () => {
+        previewLista.removeChild(item);
+    })
+
+});

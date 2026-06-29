@@ -66,7 +66,8 @@
         transition: 500ms;
       }
       /*---MAIN CONGFIG---*/
-      .lista { /* Define formatação das duas seções da página */
+      .lista {
+        /* Define formatação das duas seções da página */
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -74,14 +75,16 @@
         padding: 20px;
       }
 
-      #input-text { /* Define os estilos do input de texto */
+      #input-text {
+        /* Define os estilos do input de texto */
         padding: 10px;
         background-attachment: fixed;
         border: 2px solid var(--cor-borda);
         border-radius: 16px;
       }
 
-      #botão-enviar { /* Estilos do botão de adicionar intem na lista */
+      #botão-enviar {
+        /* Estilos do botão de adicionar intem na lista */
         padding-right: 5px;
         padding-left: 5px;
         border: 2px solid var(--cor-borda);
@@ -91,25 +94,63 @@
         background-color: var(--cor-fonte);
       }
 
-      #botão-enviar:hover { /* Estilos do botão de adicionar intem na lista */
+      #botão-enviar:hover {
+        /* Estilos do botão de adicionar intem na lista */
         cursor: pointer;
         transform: scale(1.1);
         text-shadow: 2px 3px 5px var(--fonte-sombra);
         transition: 500ms;
       }
 
-      #outputs-produtos {
+      #output-produtos { /* Plano de fundo e organização do preview! */
         display: flex;
         align-content: flex-start;
         align-items: center;
         background-color: var(--cor-cabeçalho);
-        min-height: 100px;
-        min-width: 100px;
+        border-radius: 16px;
+        min-height: 400px;
+        min-width: 400px;
       }
-      .itens {
+
+      .itens { /* Estilo dada novo elemento <li> */
         color: black;
         font-size: 12px;
         background-color: whitesmoke;
+      }
+      
+      .item-lista {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 8px 0;
+        padding: 10px 15px;
+
+        background-color: white;
+        border: 2px solid var(--cor-borda);
+        border-radius: 12px;
+
+        list-style: none;
+      }
+
+      .botao-excluir {
+        background-color: crimson;
+        color: white;
+
+        border: none;
+        border-radius: 8px;
+
+        width: 30px;
+        height: 30px;
+
+        cursor: pointer;
+
+        transition: 0.2s;
+      }
+
+      .botao-excluir:hover {
+        transform: scale(1.1);
+        background-color: darkred;
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -142,11 +183,7 @@
       <section class="lista">
         <h2>LISTA PREVIEW</h2>
         <div id="output-produtos">
-          <ul id="molde-lista" style="text-decoration: none">
-            <li class="itens" style="list-style: none"></li>
-            <li class="itens" style="list-style: none"></li>
-            <li class="itens" style="list-style: none"></li>
-          </ul>
+          <ul id="molde-lista" style="text-decoration: none"></ul>
         </div>
       </section>
     </main>
