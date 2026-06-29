@@ -10,7 +10,8 @@
         --cor-cabeçalho: #ddbfd6;
         --sombra-cabeçalho: #cf90c0;
         --fonte-geral: "Open Sans", sans-serif;
-        --cor-fonte: #000080;
+        --cor-fonte: #000080de;
+        --fonte-sombra:#0000805e;
         --lista-background-color: #faebd7;
         --itens-background-color: white;
         --cor-borda: var(--cor-fonte);
@@ -40,6 +41,7 @@
       }
       #cabeçalho:hover {
         box-shadow: 0px 5px 10px var(--sombra-cabeçalho);
+        transition: 300ms;
       }
       .lista{
         display: flex;
@@ -47,8 +49,14 @@
         gap: 20px;
       }
       #label-input:hover {
-        text-shadow: 0px 2px 20px var(--cor-fonte);
-        font-size: x;
+        text-shadow: 0px 2px 1px var(--fonte-sombra);
+        transition: 500ms;
+      }
+      #input-text{
+        padding: 10px ;
+        background-attachment: fixed;
+        border: 2px solid var(--cor-borda);
+        border-radius: 16px;
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,12 +75,14 @@
     </header>
     <main id="layout">
       <section class="lista">
+        <h1>Bem vindo a nossa lista!! </h1>
         <h2 id="label-input">Digite abaixo os items que deseja compra:</h2>
-        <input type="text" placeholder="Digite aqui os itens:" />
-        <button id="botão-enviar">Adicionar a lista +</button>
+        <div id="inputs-lista">
+        <input type="text" placeholder="Digite aqui os itens:" id="input-text"/>
+        <button id="botão-enviar">Adicionar a lista +</button> </div>
       </section>
       <section class="lista">
-        <div id="produtos">
+        <div id="output-produtos">
           <ul id="molde-lista" style="text-decoration: none">
             <li class="itens" style="list-style: none"></li>
             <li class="itens" style="list-style: none"></li>
