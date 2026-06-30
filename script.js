@@ -16,7 +16,18 @@ if (sendButton && textInput && previewLista && itensArray != null) {
 
 //Eventos de adcionar itens a lista.
 
-function adcionarParaLista() {
+function verificarItemVazio() { //inputText não pode ser vazio
+  console.log("VerificarItemVazio --> Passou")
+  const valor = textInput.value
+if (!valor || valor.trim() === "") {
+  alert("O item não pode ser vazio!");
+  return;
+}
+adicionarParaLista();
+}
+
+function adicionarParaLista() {
+  console.log("Item adicionado para a lista")
   const item = document.createElement("li");
   const deleteButton = document.createElement("button");
   const textItem = document.createElement("span");
@@ -39,17 +50,17 @@ function adcionarParaLista() {
   });
 }
 
-sendButton.addEventListener("click", () => adcionarParaLista());
+sendButton.addEventListener("click", () => verificarItemVazio());
 
 document.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     event.preventDefault(); // Previne o comportamento padrão como o envio do formulário.
     console.log("Enter foi pressionado");
-    adcionarParaLista();
+    verificarItemVazio();
   }
 });
 
-// Botão de modo escuro da página
+// Funcionalidades do botão de modo escuro da página
 
 darkModeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
