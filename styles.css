@@ -9,11 +9,11 @@
   --cor-botão: white;
   --cor-background: #241c96;
   --cor-cabeçalho: #7e80fc;
-  --sombra-cabeçalho: #92708a;
+  --sombra-cabeçalho: #070055;
   --fonte-geral: "Open Sans", sans-serif;
   --cor-fonte: #000075;
   --fonte-sombra: #0000745e;
-  --lista-background-color: rgb(187, 180, 250);
+  --lista-background-color: rgb(185, 173, 255);
   --itens-background-color: white;
   --cor-borda: var(--cor-fonte);
 }
