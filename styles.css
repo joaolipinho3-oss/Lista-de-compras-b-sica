@@ -52,13 +52,14 @@ main {
   font-size: 24px;
 }
 
-#github-link {
-  font-size: 24px;
+#github-logo {
+  max-height: 30px;
 }
 
-#github-link:hover {
+#github-logo:hover {
   cursor: pointer;
-  text-shadow: 2px 3px 5px var(--fonte-sombra);
+  border-radius: 100%;
+  box-shadow: 2px 3px 5px var(--fonte-sombra);
   transition: 500ms;
 }
 
