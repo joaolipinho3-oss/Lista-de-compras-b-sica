@@ -142,7 +142,9 @@ main {
   display: flex;
   align-items: center;
 
+  background-color: var(--cor-botão);
   border: 1px solid #ccc;
+  border-radius: 10px;
   padding: 10px;
   box-sizing: border-box;
 }
