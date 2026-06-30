@@ -135,10 +135,12 @@
       }
 
 .item-lista {
+    background-color: var(--itens-background-color);
     width: 300px;
     display: flex;
     align-items: center;
 
+    border-radius: 10px;
     border: 1px solid #ccc;
     padding: 10px;
     box-sizing: border-box;
