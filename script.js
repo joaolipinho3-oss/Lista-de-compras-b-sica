@@ -20,14 +20,14 @@ sendButton.addEventListener('click', () => {
     textItem.classList.add("texto-item");
     item.classList.add("item-lista");
     deleteButton.classList.add("botao-excluir");
+    textItem.textContent = textInput.value;
 
-    deleteButton.textContent = "X"
+    previewLista.appendChild(item);
 
-    item.appendChild(textItem)
-    item.textContent = textInput.value
-    previewLista.appendChild(item)
-    item.appendChild(deleteButton)
-    itensArray.push(previewLista.value);
+    itensArray.push(textInput.value);
+    deleteButton.textContent = "X";
+    item.appendChild(textItem);
+    item.appendChild(deleteButton);
     console.log(item);
 
     deleteButton.addEventListener('click', () => {
