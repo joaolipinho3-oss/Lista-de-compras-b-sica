@@ -6,6 +6,7 @@
     var(--cor-background),
     hsl(275, 24%, 55%)
   );
+  --cor-botão: white;
   --cor-background: #d493ff;
   --cor-cabeçalho: #f38dee;
   --sombra-cabeçalho: #92708a;
@@ -35,8 +36,6 @@ main {
   border-radius: 32px;
   display: block;
   margin: 25px;
-  background: var(--gradient-background);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 /*---CABEÇALHO CONFIG---*/
 #cabeçalho {
@@ -98,7 +97,7 @@ main {
   border: 2px solid var(--cor-borda);
   border-radius: 10px;
   font-size: 24px;
-  color: white;
+  color: var(--cor-botão);
   background-color: var(--cor-fonte);
 }
 #botão-enviar {
@@ -206,4 +205,25 @@ main {
 
 .item-lista {
   animation: aparecer 0.25s ease;
+}
+
+/*CONFIGURAÇÃO GERAL DO MODO ESCURO*/
+
+.dark-mode {
+    --cor-background: #1e1e1e;
+    --cor-cabeçalho: #2d2d2d;
+    --sombra-cabeçalho: #000000;
+    --cor-fonte: #f5f5f5;
+    --fonte-sombra: rgba(255, 255, 255, 0.2);
+    --lista-background-color: #333333;
+    --itens-background-color: #444444;
+    --cor-borda: #f5f5f5;
+    --cor-botão: black;
+
+    --gradient-background: linear-gradient(
+        125deg,
+        #2d2d2d,
+        #1e1e1e,
+        #3d3d3d
+    );
 }

@@ -1,5 +1,6 @@
 //Definindo os objetos e constantes do document.
 
+const darkModeButton = document.getElementById("dark-mode-button")
 const sendButton = document.getElementById("botão-enviar");
 const textInput = document.getElementById("input-text");
 const previewLista = document.getElementById("molde-lista");
@@ -7,7 +8,12 @@ let itensArray = [];
 
 //Verificando se as constantes não são nulas caso ocorra alguma modificação futura no código.
 
-if (sendButton && textInput && previewLista && itensArray != null) {
+if (
+    sendButton && 
+    textInput && 
+    previewLista && 
+    itensArray != null
+) {
 console.log("As constantes funcionam adequadamente.")
 } else {
     console.log("Reveja as constantes e revise o código.")
@@ -47,4 +53,10 @@ document.addEventListener('keypress', (event) => {
         console.log("Enter foi pressionado")
         adcionarParaLista()
     }
+})
+
+// Botão de modo escuro da página
+
+darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode')
 })
