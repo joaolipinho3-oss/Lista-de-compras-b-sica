@@ -3,43 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      /*---CORES ROOT e GERAL CONFIG---*/
-      :root {
-        --cor-background: #e7d2e2;
-        --cor-cabeçalho: #ddbfd6;
-        --sombra-cabeçalho: #cf90c0;
-        --fonte-geral: "Open Sans", sans-serif;
-        --cor-fonte: #000080;
-        --lista-background-color: #faebd7;
-        --itens-background-color: white;
-        --cor-borda: var(--cor-fonte);
-      }
-      * {
-        margin: auto;
-        padding: 0;
-      }
-      body {
-        font-family: var(--fonte-geral);
-        background-attachment: fixed;
-        background-color: var(--cor-background);
-        color: var(--cor-fonte);
-      }
-      header {
-        display: flex;
-        padding: 10px;
-        margin-bottom: 50px;
-      }
-      main {
-        display: block;
-        margin: 25px;
-      }
-      /*---CABEÇALHO CONFIG---*/
-      #cabeçalho {
-        background-color: var(--cor-cabeçalho);
-      }
-      
-    </style>
+    <link rel="stylesheet" href="/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -52,23 +16,28 @@
     <header id="cabeçalho">
       <button id="dark-mode-button">🌒</button>
       <h1>LISTA DE COMPRAS</h1>
-      <a id="git-hub-link">🐱</a>
+      <a id="github-link">🐱</a>
     </header>
     <main id="layout">
       <section class="lista">
-        <h2>Digite abaixo os items que deseja compra:</h2>
-        <input type="text" placeholder="Digite aqui os itens:" />
-        <button id="botão-enviar">Adicionar a lista +</button>
+        <h1>Bem vindo a nossa lista!!</h1>
+        <h2 id="label-input">Digite abaixo os items que deseja compra:</h2>
+        <div id="inputs-lista">
+          <input
+            type="text"
+            placeholder="Digite aqui os itens:"
+            id="input-text"
+          />
+          <button id="botão-enviar">+</button>
+        </div>
       </section>
       <section class="lista">
-        <div id="produtos">
-          <ul id="molde-lista" style="text-decoration: none">
-            <li class="itens" style="list-style: none"></li>
-            <li class="itens" style="list-style: none"></li>
-            <li class="itens" style="list-style: none"></li>
-          </ul>
+        <h2>🛒Sua lista</h2>
+        <div id="output-produtos">
+          <ul id="molde-lista" style="text-decoration: none"></ul>
         </div>
       </section>
     </main>
+    <script src="/script.js"></script>
   </body>
 </html>
