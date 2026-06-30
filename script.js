@@ -40,7 +40,7 @@ function adicionarParaLista() {
   previewLista.appendChild(item);
 
   itensArray.push(textInput.value);
-  deleteButton.textContent = "X";
+  deleteButton.textContent = "🗑️";
   item.appendChild(textItem);
   item.appendChild(deleteButton);
   console.log(item);
@@ -48,6 +48,13 @@ function adicionarParaLista() {
   deleteButton.addEventListener("click", () => {
     previewLista.removeChild(item);
   });
+
+  // Habilitar ou desabilitar item
+  item.addEventListener("dblclick", () => {
+  item.classList.toggle("item-disabled")
+  console.log("Item desabilitado")
+} )
+
 }
 
 sendButton.addEventListener("click", () => verificarItemVazio());

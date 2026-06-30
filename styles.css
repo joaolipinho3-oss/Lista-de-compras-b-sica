@@ -8,12 +8,12 @@
   );
   --cor-botão: white;
   --cor-background: #241c96;
-  --cor-cabeçalho: #7e80fc;
+  --cor-cabeçalho: #9092f5;
   --sombra-cabeçalho: #070055;
   --fonte-geral: "Open Sans", sans-serif;
   --cor-fonte: #000075;
   --fonte-sombra: #0000745e;
-  --lista-background-color: rgb(185, 173, 255);
+  --lista-background-color: rgb(229, 225, 253);
   --itens-background-color: white;
   --cor-borda: var(--cor-fonte);
 }
@@ -143,6 +143,7 @@ main {
   display: flex;
   align-items: center;
 
+  font-weight: bold;
   background-color: var(--cor-botão);
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -177,6 +178,13 @@ main {
   transform: translateY(-2px);
   transition: 300ms;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.item-disabled {
+  /* Efeito de desabilitado ao dar duplo clique no item */
+  opacity: 50%;
+  font-weight: lighter;
+  text-decoration: line-through;  
 }
 
 .botao-excluir:active {
