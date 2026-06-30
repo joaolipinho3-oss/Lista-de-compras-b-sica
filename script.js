@@ -53,4 +53,19 @@ document.addEventListener("keypress", (event) => {
 
 darkModeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+  changeLogo();
 });
+
+function changeLogo() {
+  const img = document.getElementById("github-logo")
+  const btn = darkModeButton
+
+  if (document.body.classList.contains("dark-mode")) {
+    img.src = "/icons/GitHub_Invertocat_White.png"
+    btn.textContent = "☀️"
+  } else {
+    img.src = "/icons/GitHub_Invertocat_Black.png"
+    btn.textContent = "🌒"
+  }
+
+}
