@@ -14,7 +14,7 @@ if (sendButton && textInput && previewLista && itensArray != null) {
   console.log("Reveja as constantes e revise o código.");
 }
 
-//Eventos de adcionar itens a lista.
+//Eventos de adcionar e remover itens da lista.
 
 function verificarItemVazio() { //inputText não pode ser vazio
   console.log("VerificarItemVazio --> Passou")
