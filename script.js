@@ -19,27 +19,38 @@ console.log("As constantes funcionam adequadamente.")
     console.log("Reveja as constantes e revise o código.")
 };
 
+textInput.addEventListener ("input", () => {
+    if (textInput.length > 46) {
+        textInput.value = textInput.value.splice(0, 45);
+    }
+})
+
+
 //Eventos de adcionar e remover itens da lista.
 
 function adcionarParaLista() {
     const item = document.createElement("li"); // Cria os elementos do item da lista
     const deleteButton = document.createElement("button");
     const textItem = document.createElement("span")
+    const editButton = document.createElement("button")
 
+    editButton.classList.add("botao-editar") // Cria classes para estilizar os filhos do item
     textItem.classList.add("texto-item");
     item.classList.add("item-lista");
     deleteButton.classList.add("botao-excluir");
-    textItem.textContent = textInput.value;
-
-    previewLista.appendChild(item);
 
     const texto = textInput.value // Linhas para salvar os itens no array
     itensArray.push(texto);
 
     deleteButton.textContent = "X";
+    editButton.textContent = "✏️"
+    textItem.textContent = textInput.value;
+
     item.appendChild(textItem);
+    item.appendChild(editButton)
     item.appendChild(deleteButton);
-    console.log(item);
+
+    previewLista.appendChild(item);
 
     deleteButton.addEventListener('click', () => { // Botão deletar 'X'
         previewLista.removeChild(item);
@@ -49,7 +60,7 @@ function adcionarParaLista() {
         if (indice !== -1) {
             itensArray.splice(indice, 1)
         }
-        
+
         console.log(itensArray)
     });
     console.log(itensArray)
@@ -72,4 +83,4 @@ darkModeButton.addEventListener('click', () => {
 })
 
 // Salvar local.storage
-localStorage.setItem("itensArray", JSON.stringify(itensArray));
+localStorage.setItem("itensArray", JSON.stringify(itensArray))

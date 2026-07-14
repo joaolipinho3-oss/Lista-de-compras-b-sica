@@ -153,6 +153,20 @@ main {
   flex: 1;
 }
 
+.botao-editar {
+  /* Estilo do botão editar elemento */
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
 .botao-excluir {
   /* Estilo do botão excluir elemento */
   width: 32px;
@@ -161,10 +175,6 @@ main {
 
   border: none;
   border-radius: 50%;
-
-  background: #c62828;
-
-  color: white;
 
   cursor: pointer;
 
@@ -176,6 +186,17 @@ main {
   transform: translateY(-2px);
   transition: 300ms;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.botao-editar:active {
+  /* Efeitos de hover e sombra da lista */
+  transform: scale(0.9);
+}
+
+.botao-editar:hover {
+  /* Efeitos de hover e sombra da lista */
+  transform: scale(1.15);
+  background: #f1bf34;
 }
 
 .botao-excluir:active {
