@@ -22,7 +22,7 @@ console.log("As constantes funcionam adequadamente.")
 //Eventos de adcionar e remover itens da lista.
 
 function adcionarParaLista() {
-    const item = document.createElement("li");
+    const item = document.createElement("li"); // Cria os elementos do item da lista
     const deleteButton = document.createElement("button");
     const textItem = document.createElement("span")
 
@@ -33,15 +33,26 @@ function adcionarParaLista() {
 
     previewLista.appendChild(item);
 
-    itensArray.push(textInput.value);
+    const texto = textInput.value // Linhas para salvar os itens no array
+    itensArray.push(texto);
+
     deleteButton.textContent = "X";
     item.appendChild(textItem);
     item.appendChild(deleteButton);
     console.log(item);
 
-    deleteButton.addEventListener('click', () => {
+    deleteButton.addEventListener('click', () => { // Botão deletar 'X'
         previewLista.removeChild(item);
-    })
+
+        const indice = itensArray.indexOf(texto);
+
+        if (indice !== -1) {
+            itensArray.splice(indice, 1)
+        }
+        
+        console.log(itensArray)
+    });
+    console.log(itensArray)
 };
 
 sendButton.addEventListener('click', () => adcionarParaLista());
