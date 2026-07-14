@@ -16,16 +16,6 @@ if (sendButton && textInput && previewLista && itensArray != null) {
 
 //Eventos de adcionar e remover itens da lista.
 
-function verificarItemVazio() { //inputText não pode ser vazio
-  console.log("VerificarItemVazio --> Passou")
-  const valor = textInput.value
-if (!valor || valor.trim() === "") {
-  alert("O item não pode ser vazio!");
-  return;
-}
-adicionarParaLista();
-}
-
 function adicionarParaLista() {
   console.log("Item adicionado para a lista")
   const item = document.createElement("li");
@@ -39,23 +29,34 @@ function adicionarParaLista() {
 
   previewLista.appendChild(item);
 
-  itensArray.push(textInput.value);
+  const texto = textInput.value // Linhas para salvar os itens no array
+  itensArray.push(texto);
+
   deleteButton.textContent = "🗑️";
   item.appendChild(textItem);
   item.appendChild(deleteButton);
   console.log(item);
 
-  deleteButton.addEventListener("click", () => {
-    previewLista.removeChild(item);
-  });
+    deleteButton.addEventListener('click', () => { // Botão deletar 'X'
+        previewLista.removeChild(item);
 
-  // Habilitar ou desabilitar item
+        const indice = itensArray.indexOf(texto);
+
+        if (indice !== -1) {
+            itensArray.splice(indice, 1)
+        }
+        
+        console.log(itensArray)
+    });
+    console.log(itensArray)
+
+    // Habilitar ou desabilitar item
   item.addEventListener("dblclick", () => {
   item.classList.toggle("item-disabled")
   console.log("Item desabilitado")
 } )
 
-}
+};
 
 sendButton.addEventListener("click", () => verificarItemVazio());
 
