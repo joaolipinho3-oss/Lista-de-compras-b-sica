@@ -19,7 +19,7 @@ console.log("As constantes funcionam adequadamente.")
     console.log("Reveja as constantes e revise o código.")
 };
 
-//Eventos de adcionar itens a lista.
+//Eventos de adcionar e remover itens da lista.
 
 function adcionarParaLista() {
     const item = document.createElement("li");
@@ -40,9 +40,8 @@ function adcionarParaLista() {
     console.log(item);
 
     deleteButton.addEventListener('click', () => {
-        previewLista.removeChild(item)
+        previewLista.removeChild(item);
     })
-
 };
 
 sendButton.addEventListener('click', () => adcionarParaLista());
@@ -60,3 +59,6 @@ document.addEventListener('keypress', (event) => {
 darkModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode')
 })
+
+// Salvar local.storage
+localStorage.setItem("itensArray", JSON.stringify(itensArray));
