@@ -14,6 +14,13 @@ if (sendButton && textInput && previewLista && itensArray != null) {
   console.log("Reveja as constantes e revise o código.");
 }
 
+textInput.addEventListener ("input", () => {
+    if (textInput.length > 46) {
+        textInput.value = textInput.value.splice(0, 45);
+    }
+})
+
+
 //Eventos de adcionar e remover itens da lista.
 
 function adicionarParaLista() {
@@ -21,21 +28,25 @@ function adicionarParaLista() {
   const item = document.createElement("li");
   const deleteButton = document.createElement("button");
   const textItem = document.createElement("span");
+    const editButton = document.createElement("button")
 
-  textItem.classList.add("texto-item");
-  item.classList.add("item-lista");
-  deleteButton.classList.add("botao-excluir");
-  textItem.textContent = textInput.value;
-
-  previewLista.appendChild(item);
+    editButton.classList.add("botao-editar") // Cria classes para estilizar os filhos do item
+    textItem.classList.add("texto-item");
+    item.classList.add("item-lista");
+    deleteButton.classList.add("botao-excluir");
 
   const texto = textInput.value // Linhas para salvar os itens no array
   itensArray.push(texto);
 
   deleteButton.textContent = "🗑️";
+    editButton.textContent = "✏️"
+    textItem.textContent = textInput.value;
+
   item.appendChild(textItem);
+    item.appendChild(editButton)
   item.appendChild(deleteButton);
-  console.log(item);
+
+  previewLista.appendChild(item);
 
     deleteButton.addEventListener('click', () => { // Botão deletar 'X'
         previewLista.removeChild(item);
@@ -45,7 +56,7 @@ function adicionarParaLista() {
         if (indice !== -1) {
             itensArray.splice(indice, 1)
         }
-        
+
         console.log(itensArray)
     });
     console.log(itensArray)
